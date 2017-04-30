@@ -55,5 +55,9 @@ public class Author {
 		return this.comics;
 	}
 	
+	public String toString(){
+		return String.format("%s %s", this.getFirstName(), this.getLastName());
+	}
+	
 
 }
