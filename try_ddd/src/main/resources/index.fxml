@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane fx:controller="try_ddd.try_ddd.javafxgui.IndexController" 
+    xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10" 
+    styleClass="root">
+  <padding><Insets top="25" right="25" bottom="10" left="25" /></padding>
+  
+  
+  <HBox spacing="10" alignment="bottom_right" 
+      GridPane.columnIndex="0" GridPane.rowIndex="0">
+      <Button text="Manage Borrows" fx:id="manageBorrow"
+       onAction="#openManageBorrows" />
+  </HBox>
+  <HBox spacing="10" alignment="bottom_right" 
+      GridPane.columnIndex="1" GridPane.rowIndex="0">
+      <Button text="Add Copy" fx:id="addCopy"
+       onAction="#openAddCopy" />
+   </HBox>     
+  <HBox spacing="10" alignment="bottom_right" 
+      GridPane.columnIndex="0" GridPane.rowIndex="1">
+      <Button text="Manage Comics" fx:id="manageComics"
+       onAction="#openManageComics" />
+ </HBox>
+  <HBox spacing="10" alignment="bottom_right" 
+      GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <Button text="Manage Friends" fx:id="manageFriends"
+       onAction="#openManageFriends" />
+  </HBox>
+  
+  
+</GridPane>
