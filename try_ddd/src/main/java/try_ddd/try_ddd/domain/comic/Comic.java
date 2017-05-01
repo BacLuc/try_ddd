@@ -1,14 +1,14 @@
 package try_ddd.try_ddd.domain.comic;
 
 import java.util.Enumeration;
-import java.util.Vector;
+import java.util.ArrayList;
 
 public class Comic {
 	
 	private int num;
 	private String title;
 	private int year;
-	private Vector<Author> authors;
+	private ArrayList<Author> authors;
 	private Series series;
 	public Comic(int num, String title, int year) {
 		this.num = num;
@@ -39,7 +39,7 @@ public class Comic {
 	public void setSeries(Series series) {
 		this.series = series;
 	}
-	public Vector<Author> elements() {
+	public ArrayList<Author> elements() {
 		return this.authors;
 	}
 	public Comic add(Author e) {
