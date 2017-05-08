@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Copy {
 	private Comic comic;
 	private Date boughtAt;
-	private ArrayList<Borrow> borrowed;
+	private ArrayList<Borrow> borrowed = new ArrayList<Borrow>();
 	private States state;
 	
 	public enum States {

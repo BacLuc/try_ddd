@@ -27,6 +27,8 @@ public class NewJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        borrow1 = new try_ddd.try_ddd.domain.comic.Borrow();
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -41,5 +43,6 @@ public class NewJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private try_ddd.try_ddd.domain.comic.Borrow borrow1;
     // End of variables declaration//GEN-END:variables
 }

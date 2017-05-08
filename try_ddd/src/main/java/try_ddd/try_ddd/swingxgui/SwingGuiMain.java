@@ -5,9 +5,14 @@
  */
 package try_ddd.try_ddd.swingxgui;
 
+import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.GroupLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import try_ddd.try_ddd.domain.comic.ComicCollection;
+import try_ddd.try_ddd.domain.comic.testdata.ComicGenerator;
 
 /**
  *
@@ -17,7 +22,11 @@ public class SwingGuiMain extends JFrame {
     
     private GroupLayout groupLayout;
     
-    public SwingGuiMain(){
+    private static ComicCollection collection = ComicGenerator.fillWithCopies(new ComicCollection());
+    
+    public SwingGuiMain() throws ParseException{
+      
+       
        initComponents();
     }
     
@@ -71,15 +80,25 @@ public class SwingGuiMain extends JFrame {
         //</editor-fold>
         //</editor-fold>
 
+        
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
                 
-                new SwingGuiMain().setVisible(true);
+                try {
+                    new SwingGuiMain().setVisible(true);
+                } catch (ParseException ex) {
+                    Logger.getLogger(SwingGuiMain.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 
             }
         });
+    }
+    
+    public static ComicCollection getComicCollection(){
+        return SwingGuiMain.collection;
     }
     
     
