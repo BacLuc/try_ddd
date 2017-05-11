@@ -14,3 +14,5 @@ hs_err_pid*
 .buildpath
 .project
 .settings
+/try_ddd/nbactions.xml
+/try_ddd/nb-configuration.xml
