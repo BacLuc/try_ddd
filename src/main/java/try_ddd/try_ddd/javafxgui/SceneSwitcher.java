@@ -20,8 +20,8 @@ import javafx.stage.Stage;
  * @author lucius
  */
 public class SceneSwitcher {
-    public static final String SCENE_MAIN="/index.fxml";
-    public static final String SCENE_ADD_COPY="/addcopy.fxml";
+    public static final String SCENE_MAIN= "/index.fxml";
+    public static final String SCENE_ADD_COPY= "/addcopy.fxml";
     
     
     public static void switchScene(Node node, String newScene){

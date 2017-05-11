@@ -1,8 +1,9 @@
 package try_ddd.try_ddd.domain.comic;
 
-import java.util.Vector;
-
 import junit.framework.TestCase;
+import try_ddd.try_ddd.domain.comic.Author;
+import try_ddd.try_ddd.domain.comic.Comic;
+import try_ddd.try_ddd.domain.comic.Person;
 
 public class AuthorTest extends TestCase {
 	

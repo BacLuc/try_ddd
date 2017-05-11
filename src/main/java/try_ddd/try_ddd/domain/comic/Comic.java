@@ -1,6 +1,5 @@
 package try_ddd.try_ddd.domain.comic;
 
-import java.util.Enumeration;
 import java.util.ArrayList;
 
 public class Comic {

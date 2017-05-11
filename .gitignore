@@ -16,3 +16,5 @@ hs_err_pid*
 .settings
 /try_ddd/nbactions.xml
 /try_ddd/nb-configuration.xml
+.idea/
+*.iml

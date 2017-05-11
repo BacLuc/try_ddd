@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import javax.swing.GroupLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -18,9 +17,8 @@ import javax.swing.JTable;
 import javax.swing.SwingUtilities;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableModel;
-import try_ddd.try_ddd.domain.comic.Borrow;
+
 import try_ddd.try_ddd.domain.comic.Comic;
-import try_ddd.try_ddd.domain.comic.ComicCollection;
 import try_ddd.try_ddd.domain.comic.Copy;
 
 /**
