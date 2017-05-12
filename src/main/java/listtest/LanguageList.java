@@ -1,6 +1,7 @@
 package listtest;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.StringJoiner;
 
 /**
@@ -24,10 +25,12 @@ public class LanguageList {
 
         int size = languageList.size();
 
-        for(int i = 0; i<size;i++){
-            if(language.equals(languageList.get(i))){
-                languageList.remove(i);
+        Iterator<Language> iterator= languageList.iterator();
 
+        while(iterator.hasNext()){
+            Language toCheck = iterator.next();
+            if(toCheck.equals(language)){
+                languageList.remove(toCheck);
             }
         }
     }
