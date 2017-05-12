@@ -27,12 +27,11 @@ public class LanguageList {
 
         Iterator<Language> iterator= languageList.iterator();
 
-        while(iterator.hasNext()){
-            Language toCheck = iterator.next();
-            if(toCheck.equals(language)){
-                languageList.remove(toCheck);
-            }
-        }
+       for(Language lang : languageList){
+           if(lang.equals(language)){
+               languageList.remove(lang);
+           }
+       }
     }
 
     public String toString(){
