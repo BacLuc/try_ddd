@@ -39,10 +39,15 @@ public class JavaFXMain extends Application {
         menuBar.prefWidthProperty().bind(stage.widthProperty());
         root.setTop(menuBar);
 
+
+        ViewFactory factory = new ViewFactory();
+
+        Node startNode;
+
         menuBar.getMenus().addAll(
                 new Menu("Menu1", null,
-                        newNodeMenuItem("View1", View1.getNode())
-                        , newNodeMenuItem("View2", View2.getNode())
+                        newNodeMenuItem("View1", startNode = factory.getNodeOfView(View1.class))
+                        , newNodeMenuItem("View2", factory.getNodeOfView(View2.class))
                         )
 
 
@@ -51,7 +56,7 @@ public class JavaFXMain extends Application {
 
 
 
-
+        setCenterView(startNode);
 
 
     
