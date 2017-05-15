@@ -1,5 +1,6 @@
 package try_ddd.try_ddd.dolphingui.javafxnofxml.client.views;
 
+import com.sun.deploy.util.SessionState;
 import groovy.lang.Closure;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -28,7 +29,10 @@ import java.util.List;
  */
 public class View1 extends AbstractView {
     private Button button;
-    private TextField textField;
+    private TextField title;
+    private TextField year;
+    private TextField num;
+
 
     private CheckBox status;
 
@@ -40,12 +44,24 @@ public class View1 extends AbstractView {
     public View1(){
         Pane anchor = new Pane(
                 new VBox(
-                    button = new Button("clickme")
-                    ,textField = new TextField()
+                    new HBox(
+                        button = new Button("clickme")
+                    )
                     ,new HBox(
-                            new Label("Is dirty ?")
-                            ,status = new CheckBox()
-
+                        new Label("Title")
+                        , title = new TextField()
+                    )
+                    ,new HBox(
+                        new Label("Year")
+                        ,year = new TextField()
+                    )
+                    ,new HBox(
+                        new Label("Num")
+                        ,num = new TextField()
+                    )
+                    ,new HBox(
+                        new Label("Is dirty ?")
+                        ,status = new CheckBox()
                     )
                 )
         );
@@ -56,7 +72,12 @@ public class View1 extends AbstractView {
 
         setRoot(anchor);
 
-        textAttributeModel = JavaFXApplication.getClientDolphin().presentationModel(PM_PERSON, new ClientAttribute(ATT_FIRSTNAME, "", null, Tag.VALUE));
+        textAttributeModel = JavaFXApplication.getClientDolphin().presentationModel(PM_COMIC,
+                new ClientAttribute(ATT_TITLE, "", null, Tag.VALUE)
+                ,new ClientAttribute(ATT_NUM,null,null, Tag.VALUE)
+                ,new ClientAttribute(ATT_YEAR,null,null, Tag.VALUE)
+
+        );
 
 
         setupBinding();
@@ -72,7 +93,12 @@ public class View1 extends AbstractView {
     }
 
     private void setupBinding() {
-        JFXBinder.bind("text").of(textField).to(ATT_FIRSTNAME).of(textAttributeModel);
+        JFXBinder.bind("text").of(title).to(ATT_TITLE).of(textAttributeModel);
+        JFXBinder.bind("text").of(year).to(ATT_YEAR).of(textAttributeModel);
+        JFXBinder.bind("text").of(num).to(ATT_NUM).of(textAttributeModel);
+
+
+
         JFXBinder.bindInfo("dirty").of(textAttributeModel).to("selected").of(status);
 
         Closure converter = new Closure(null) {
@@ -94,7 +120,11 @@ public class View1 extends AbstractView {
                 JavaFXApplication.getClientDolphin().send(CMD_LOG, new OnFinishedHandlerAdapter() {
                     @Override
                     public void onFinished(List<ClientPresentationModel> presentationModels) {
-                        textAttributeModel.getAt(ATT_FIRSTNAME).rebase();
+
+                        textAttributeModel.getAttributes().forEach(
+                                clientAttribute -> ((ClientAttribute)clientAttribute).rebase()
+                        );
+
                     }
                 });
             }

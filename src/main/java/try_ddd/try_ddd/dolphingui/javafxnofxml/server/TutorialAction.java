@@ -15,7 +15,7 @@ public class TutorialAction extends DolphinServerAction {
     public void registerIn(ActionRegistry actionRegistry) {
         actionRegistry.register(CMD_LOG, new CommandHandler<Command>() {
             public void handleCommand(Command command, List<Command> response) {
-                System.out.println(getServerDolphin().getAt(PM_PERSON).getAt(ATT_FIRSTNAME).getValue());
+                System.out.println(getServerDolphin().getAt(PM_COMIC).getAt(ATT_TITLE).getValue());
             }
         });
     }
